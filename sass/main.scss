@@ -275,11 +275,63 @@ body {
                 }
             }
         }
-    
+
+        &-info {
+            position: absolute;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            border-radius:8px;
+            background-image: $light-blue-gradient-solid;
+            opacity: 0;
+            transform: rotateY(180deg);
+            transition: transform 1s, opacity 1s;
+
+            &-title {
+                @include islandCardStyles;
+                top:1.2em;
+                font-family:'Kaushan Script', cursive;
+                font-size: 2.8rem;
+            }
+
+            &-list {
+                margin: 0 auto;
+                width: 70%;
+                list-style:none;
+
+                &-item {
+                    padding: 1em;
+                    font-size:1.4rem;
+                    border-bottom:1px solid $light-white; 
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            &-btn {
+              @include islandCardStyles;
+              bottom: 2em;
+              padding:1em;
+              border-radius: 8px;
+              width: 80%;
+              border:none; 
+              background-color: $green-color;
+              cursor: pointer;
+
+              &::before {
+                background-color: $green-color-hover;
+              }
+            }
+        }
     }
    
 }
-
 
 
 // media
@@ -352,6 +404,20 @@ body {
            font-size: 2.2rem; 
         }
     }
+
+.islands {
+    &__cards {
+        display: flex;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    &__card {
+        margin: 1em;
+        width: 45%;
+    }
+}
+
 }
 
 @media (min-width:992px) {
@@ -393,6 +459,7 @@ body {
             font-size: 2.2rem;
         }
     }
+
     .hero-img {
         padding: 40rem 2em;
         background-image: $blue-gradient, url('../images/hero-beach-1920.jpg');   
@@ -406,4 +473,12 @@ body {
             max-width:900px;
         }
     }
+}
+
+@media (min-width:1100px) {
+    .islands {
+        &__card {
+            width: 30%;
+        }
+    } 
 }
