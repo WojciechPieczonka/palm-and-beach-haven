@@ -1,4 +1,4 @@
-# palm-and-beach-haven
+# Palm and Beach Haven 
 
 Website of an agency offering holidays on exotic islands.
 
