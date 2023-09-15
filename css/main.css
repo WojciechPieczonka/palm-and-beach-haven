@@ -109,7 +109,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 8px;
 }
-.burger-btn:hover .burger-btn__bars::after, .burger-btn:hover .burger-btn__bars::before {
+.burger-btn:hover .burger-btn__bars::after,
+.burger-btn:hover .burger-btn__bars::before {
   width: 100%;
 }
 .burger-btn__box {
@@ -176,6 +177,10 @@ body {
 }
 .nav__item:hover::before {
   transform: scaleY(1);
+}
+
+.black-bars-color, .black-bars-color::after, .black-bars-color::before {
+  background-color: #2e2e2e;
 }
 
 .header {

@@ -5,9 +5,9 @@
 *,
 *::before,
 *::after {
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -39,7 +39,9 @@ body {
     }
 
     &:hover {
-        .burger-btn__bars::after, .burger-btn__bars::before {
+
+        .burger-btn__bars::after,
+        .burger-btn__bars::before {
             width: 100%;
         }
     }
@@ -50,12 +52,15 @@ body {
         height: 30px;
     }
 
-    &__bars, &__bars::after, &__bars::before {
+    &__bars,
+    &__bars::after,
+    &__bars::before {
         @include burgerBtn;
     }
 
     &__bars {
         width: 100%;
+
         &::after {
             top: 13px;
             width: 60%;
@@ -74,44 +79,49 @@ body {
     top: 0;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     height: 100vh;
     width: 100%;
     transform: translateX(100%);
-    transition: .5s cubic-bezier(0.65,0.05,0.36,1);
+    transition: .5s cubic-bezier(0.65, 0.05, 0.36, 1);
     background-image: $blue-gradient-solid;
     z-index: 100;
 
     &--active {
         transform: translateX(0);
     }
-    
-     &__item {
+
+    &__item {
         position: relative;
         display: block;
         margin: 0.5em 0;
         padding: 0.5em 2em;
-        font-size:2.8rem;
+        font-size: 2.8rem;
         text-decoration: none;
         color: $pure-white;
 
-        &::before{
-           position: absolute;
-           top:0;
-           left: 0;
-           width: 3px;
-           height: 100%;
-           transform: scaleY(0);
-           background-color: $pure-white;
-           transition: transform .3s;
-           content: ''; 
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            transform: scaleY(0);
+            background-color: $pure-white;
+            transition: transform .3s;
+            content: '';
         }
 
-        &:hover::before{
+        &:hover::before {
             transform: scaleY(1);
-         }
+        }
     }
 }
+
+.black-bars-color, .black-bars-color::after, .black-bars-color::before {
+    background-color: $dark;
+}
+
 
 // header
 
@@ -124,12 +134,12 @@ body {
     padding: 2em;
     height: 75vh;
     text-align: center;
-    color: $pure-white; 
+    color: $pure-white;
     @include heroImages('../images/hero-640.jpg');
     background-attachment: scroll;
 
     &__heading {
-        font-family:'Kaushan Script', cursive;
+        font-family: 'Kaushan Script', cursive;
         font-size: 4.8rem;
         font-weight: 300;
     }
@@ -148,12 +158,12 @@ body {
         color: $dark;
         text-decoration: none;
         text-transform: uppercase;
-        cursor:pointer;
+        cursor: pointer;
 
-            &::before {
-                background-color: $light-white;
-            }
+        &::before {
+            background-color: $light-white;
         }
+    }
 }
 
 @keyframes navItemAnimation {
@@ -162,22 +172,23 @@ body {
     }
 
     to {
-        transform:translateX(0);
+        transform: translateX(0);
     }
 }
 
-.nav-items-animation{
+.nav-items-animation {
     animation: navItemAnimation 1s both;
 }
 
 //main//
+
 //dreams section
 
 .dreams {
     &__box {
-       display: flex;
-       flex-direction: column;
-       margin: 2em 0; 
+        display: flex;
+        flex-direction: column;
+        margin: 2em 0;
     }
 
     &__img {
@@ -196,7 +207,7 @@ body {
 
 //hero img
 
-.hero-img{
+.hero-img {
     position: relative;
     padding: 10em 2em;
     @include heroImages ('../images/hero-beach-640.jpg');
@@ -205,7 +216,7 @@ body {
     overflow: hidden;
 
     &__title {
-        font-family:'Kaushan Script', cursive;
+        font-family: 'Kaushan Script', cursive;
         font-size: 4.8rem;
         margin-bottom: 0.5em;
     }
@@ -227,15 +238,15 @@ body {
         perspective: 1000px;
 
         &:hover {
-           .islands__card-img {
-            transform: rotateY(-180deg);
-            opacity:0;
-           } 
+            .islands__card-img {
+                transform: rotateY(-180deg);
+                opacity: 0;
+            }
 
-           .islands__card-info {
-            transform: rotateY(0);
-            opacity: 1;
-           } 
+            .islands__card-info {
+                transform: rotateY(0);
+                opacity: 1;
+            }
 
         }
 
@@ -260,7 +271,7 @@ body {
             }
 
             &-title {
-                font-family:'Kaushan Script', cursive;
+                font-family: 'Kaushan Script', cursive;
                 font-size: 2.8rem;
             }
 
@@ -278,14 +289,14 @@ body {
 
         &-info {
             position: absolute;
-            top:0;
+            top: 0;
             bottom: 0;
             right: 0;
             left: 0;
             display: flex;
             flex-direction: column;
-            justify-content:center;
-            border-radius:8px;
+            justify-content: center;
+            border-radius: 8px;
             background-image: $light-blue-gradient-solid;
             opacity: 0;
             transform: rotateY(180deg);
@@ -293,21 +304,21 @@ body {
 
             &-title {
                 @include islandCardStyles;
-                top:1.2em;
+                top: 1.2em;
                 width: 80%;
-                font-family:'Kaushan Script', cursive;
+                font-family: 'Kaushan Script', cursive;
                 font-size: 2.8rem;
             }
 
             &-list {
                 margin: 0 auto;
                 width: 70%;
-                list-style:none;
+                list-style: none;
 
                 &-item {
                     padding: 1em;
-                    font-size:1.4rem;
-                    border-bottom:1px solid $light-white; 
+                    font-size: 1.4rem;
+                    border-bottom: 1px solid $light-white;
 
                     &:last-child {
                         border-bottom: none;
@@ -316,22 +327,22 @@ body {
             }
 
             &-btn {
-              @include islandCardStyles;
-              bottom: 2em;
-              padding:1em;
-              border-radius: 8px;
-              width: 80%;
-              border:none; 
-              background-color: $green-color;
-              cursor: pointer;
+                @include islandCardStyles;
+                bottom: 2em;
+                padding: 1em;
+                border-radius: 8px;
+                width: 80%;
+                border: none;
+                background-color: $green-color;
+                cursor: pointer;
 
-              &::before {
-                background-color: $green-color-hover;
-              }
+                &::before {
+                    background-color: $green-color-hover;
+                }
             }
         }
     }
-   
+
 }
 
 //offers
@@ -339,7 +350,7 @@ body {
 .offers {
     position: relative;
     @include heroImages ('../images/beach-hero-640.jpg');
-    overflow:hidden;
+    overflow: hidden;
 
     .section-heading {
         color: $pure-white;
@@ -349,7 +360,7 @@ body {
         margin: 1em 0;
         box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
         background-color: $pure-white;
-        overflow:hidden;
+        overflow: hidden;
 
         &-img {
             width: 100%;
@@ -374,11 +385,11 @@ body {
 
         &-text {
             margin-bottom: 0.5em;
-            font-size:1.3rem;
+            font-size: 1.3rem;
             color: $dark;
-         }
+        }
 
-         &-btn {
+        &-btn {
             margin-top: 1em;
             padding: 0.8em;
             width: 100%;
@@ -391,7 +402,7 @@ body {
             &::before {
                 background-color: $secondary-color;
             }
-         }
+        }
     }
 
 }
@@ -419,17 +430,17 @@ body {
     }
 
     &__box-img {
-      position: absolute;
-      top: 8%;
-      left: 75%;
-      transform: translate(-50%, -50%); 
+        position: absolute;
+        top: 8%;
+        left: 75%;
+        transform: translate(-50%, -50%);
 
-      img {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        border-radius: 50%;
-      }
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
 
     }
 
@@ -456,7 +467,8 @@ body {
         background-color: $dark;
     }
 
-    &__form, &__form-top {
+    &__form,
+    &__form-top {
         display: flex;
         flex-direction: column;
     }
@@ -467,13 +479,13 @@ body {
     }
 
     &__form-input {
-       @include contactForm; 
+        @include contactForm;
     }
 
     &__form-textarea {
-       @include contactForm; 
-       resize: vertical;
-       min-height: 100px;
+        @include contactForm;
+        resize: vertical;
+        min-height: 100px;
     }
 
     &__form-btn {
@@ -485,7 +497,7 @@ body {
         border: none;
         border-radius: 8px;
         background-color: $main-color;
-        cursor:pointer;
+        cursor: pointer;
 
         &::before {
             background-color: $secondary-color;
@@ -545,7 +557,7 @@ body {
 
 // media
 
-@media (min-width:576px){
+@media (min-width:576px) {
     .dreams {
         &__box {
             flex-direction: row;
@@ -562,7 +574,7 @@ body {
             &-img {
                 width: 40%;
 
-                &--right{
+                &--right {
                     order: 1;
                 }
             }
@@ -620,7 +632,7 @@ body {
         }
 
         &__text {
-            font-size:2.2rem;
+            font-size: 2.2rem;
         }
 
         &__btn {
@@ -643,59 +655,59 @@ body {
         }
 
         &__text {
-           font-size: 2.2rem; 
+            font-size: 2.2rem;
         }
     }
 
-.islands {
-    &__cards {
-        display: flex;
-        justify-content:center;
-        flex-wrap:wrap;
-    }
+    .islands {
+        &__cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-    &__card {
-        margin: 1em;
-        width: 45%;
-    }
-}
-
-.footer {
-    &__boxes {
-      display: flex;
-      justify-content: space-between;  
-    }
-
-    &__box-desktop {
-        display: block;  
-    }
-
-    &__box {
-        margin: 0 2em;
-        width: 25%;
-
-        &:first-child {
-            width: 50%;
+        &__card {
+            margin: 1em;
+            width: 45%;
         }
     }
 
-    &__box-title {
-        font-size: 2.4rem;
-    }
+    .footer {
+        &__boxes {
+            display: flex;
+            justify-content: space-between;
+        }
 
-    &__box-list {
-        list-style: none;
-    }
+        &__box-desktop {
+            display: block;
+        }
 
-    &__box-list-item {
-        margin-bottom: 1em;
+        &__box {
+            margin: 0 2em;
+            width: 25%;
 
-        a {
-            color: $light-white;
-            text-decoration: none;
+            &:first-child {
+                width: 50%;
+            }
+        }
+
+        &__box-title {
+            font-size: 2.4rem;
+        }
+
+        &__box-list {
+            list-style: none;
+        }
+
+        &__box-list-item {
+            margin-bottom: 1em;
+
+            a {
+                color: $light-white;
+                text-decoration: none;
+            }
         }
     }
-}
 
 }
 
@@ -707,8 +719,9 @@ body {
 
     .header {
         background-image: $blue-gradient, url('../images/hero-1920.jpg');
+
         &__heading {
-           font-size: 10rem; 
+            font-size: 10rem;
         }
     }
 
@@ -729,7 +742,7 @@ body {
                 margin-bottom: 2.5em;
             }
         }
-        
+
         &__title {
             font-size: 3.6rem;
         }
@@ -741,7 +754,7 @@ body {
 
     .hero-img {
         padding: 40rem 2em;
-        background-image: $blue-gradient, url('../images/hero-beach-1920.jpg');   
+        background-image: $blue-gradient, url('../images/hero-beach-1920.jpg');
 
         &__title {
             font-size: 7.2rem;
@@ -749,17 +762,17 @@ body {
 
         hr {
             width: 60%;
-            max-width:900px;
+            max-width: 900px;
         }
     }
 
-    .offers{
+    .offers {
         background-image: $blue-gradient, url('../images/beach-hero-1920.jpg');
 
         &__option {
             &-img {
                 object-fit: cover;
-                height: 300px; 
+                height: 300px;
             }
 
             &-info {
@@ -778,5 +791,5 @@ body {
         &__card {
             width: 30%;
         }
-    } 
+    }
 }
