@@ -1,4 +1,4 @@
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('.nav-hidden');
 const navBtn = document.querySelector('.burger-btn');
 const allNavItems = document.querySelectorAll('.nav__item');
 const navBtnBars = document.querySelector('.burger-btn__bars');
@@ -6,11 +6,11 @@ const allSections = document.querySelectorAll('.section');
 const footerYear = document.querySelector('.footer__year');
 
 const handleNav = () => {
-	nav.classList.toggle('nav--active');
+	nav.classList.toggle('nav-hidden--active');
 	navBtnBars.classList.remove('black-bars-color');
 	allNavItems.forEach((item) => {
 		item.addEventListener('click', () => {
-			nav.classList.remove('nav--active');
+			nav.classList.remove('nav-hidden--active');
 		});
 	});
 
